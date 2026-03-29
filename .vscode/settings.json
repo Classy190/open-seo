@@ -7,5 +7,9 @@
   },
   "files.readonlyInclude": {
     "**/routeTree.gen.ts": true
+  },
+  "chat.tools.terminal.autoApprove": {
+    "pnpm": true,
+    "Test-Path": true
   }
 }
