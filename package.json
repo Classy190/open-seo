@@ -5,8 +5,8 @@
   "version": "0.0.2",
   "type": "module",
   "scripts": {
-    "dev": "AUTH_MODE=local_noauth vite dev",
-    "dev:agents": "mkdir -p .logs && AUTH_MODE=local_noauth portless run vite dev 2>&1 | tee .logs/dev-server.log",
+    "dev": "cross-env AUTH_MODE=local_noauth vite dev",
+    "dev:agents": "node -e \"require('fs').mkdirSync('.logs', { recursive: true })\" && cross-env AUTH_MODE=local_noauth portless run vite dev 2>&1 | tee .logs/dev-server.log",
     "build": "vite build && tsc --noEmit",
     "lint": "oxlint . --type-aware",
     "lint:fix": "oxlint . --type-aware --fix",
@@ -81,6 +81,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.6.0",
+    "cross-env": "^10.1.0",
     "drizzle-kit": "^0.31.4",
     "knip": "^5.66.4",
     "oxlint": "^1.50.0",
