@@ -31,6 +31,12 @@ function getAuthMode(): AuthMode {
     );
   }
 
+  // Vercel builds and deployments may not set auth envs in preview mode.
+  // Fall back to local_noauth for build-time prerender and early startup.
+  if (process.env.VERCEL === "1") {
+    return "local_noauth";
+  }
+
   return "cloudflare_access";
 }
 
