@@ -10,6 +10,6 @@ declare namespace Cloudflare {
     POLICY_AUD?: string;
 
     // DataForSEO API Basic auth value (base64 of login:password)
-    DATAFORSEO_API_KEY: string;
+    DATAFORSEO_API_KEY?: string;
   }
 }

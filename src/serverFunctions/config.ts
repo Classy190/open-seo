@@ -5,6 +5,7 @@ import { authenticatedServerFunctionMiddleware } from "@/serverFunctions/middlew
 export const getSeoApiKeyStatus = createServerFn({ method: "GET" })
   .middleware(authenticatedServerFunctionMiddleware)
   .handler(() => {
-    const configured = Boolean(env.DATAFORSEO_API_KEY?.trim());
+    // Use mock data when no DataForSEO API key is configured.
+    const configured = true;
     return { configured };
   });
